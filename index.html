@@ -9,13 +9,66 @@ body {
   background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
   font-family: "Georgia", serif;
   text-align: center;
+  overflow: hidden;
+}
+
+/* FONDO DE CORAZONES */
+.corazones {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.corazones span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff4d6d;
+  transform: rotate(45deg);
+  animation: subir 10s linear infinite;
+}
+
+.corazones span::before,
+.corazones span::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff4d6d;
+  border-radius: 50%;
+}
+
+.corazones span::before {
+  top: -10px;
+  left: 0;
+}
+
+.corazones span::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(45deg);
+    opacity: 0;
+  }
 }
 
 /* TITULO */
 .titulo {
   font-size: 42px;
   margin-top: 40px;
-  
+  position: relative;
+  z-index: 1;
+
   background: linear-gradient(90deg, #ff4d6d, #ff99ac, #ff4d6d);
   background-size: 200%;
   color: transparent;
@@ -35,6 +88,8 @@ body {
   color: #d6336c;
   line-height: 2;
   margin-top: 60px;
+  position: relative;
+  z-index: 1;
 
   opacity: 0;
   animation: aparecer 3s forwards;
@@ -63,6 +118,8 @@ body {
   transition: 0.5s;
   border: none;
   font-size: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .boton:hover {
@@ -76,51 +133,53 @@ body {
 
 <body>
 
+<!-- CORAZONES -->
+<div class="corazones">
+  <span style="left:10%; animation-duration:8s;"></span>
+  <span style="left:20%; animation-duration:12s;"></span>
+  <span style="left:35%; animation-duration:10s;"></span>
+  <span style="left:50%; animation-duration:7s;"></span>
+  <span style="left:65%; animation-duration:11s;"></span>
+  <span style="left:80%; animation-duration:9s;"></span>
+</div>
+
 <h1 class="titulo">Para ti, mi vida 🦭</h1>
 
 <div class="poema">
 
 <p class="verso">Cada vez que te veo,</p>
-<p class="verso">sonrío sin pensarlo.</p>
-<p class="verso">Se me escapa la risa,</p>
-<p class="verso">ligera, inevitable,</p>
-<p class="verso">como si mi alma supiera</p>
-<p class="verso">algo que yo aún no digo.</p>
+<p class="verso">sonrío sin querer.</p>
+<p class="verso">Brota en mí una risa con locura,</p>
+<p class="verso">pura y sincera.</p>
+<p class="verso">Suena tonto, lo sé.</p>
 
 <br>
 
-<p class="verso">Suena tonto, tal vez…</p>
-<p class="verso">pero no sé hacer otra cosa</p>
-<p class="verso">que quererte así,</p>
-<p class="verso">con todo lo que soy.</p>
-<p class="verso">Pídeme lo que quieras,</p>
-<p class="verso">menos aprender a olvidarte.</p>
+<p class="verso">Pero se me hace imposible no amarte,</p>
+<p class="verso">no amarte con todo mi corazón.</p>
+<p class="verso">Es una tarea imposible, me podrás pedir cualquier cosa,</p>
+<p class="verso">menos dejar de amarte.</p>
 
 <br>
 
-<p class="verso">Quiero verte brillar</p>
-<p class="verso">como lo haces ahora,</p>
-<p class="verso">sin que nada en el mundo</p>
-<p class="verso">opaque tu luz.</p>
-<p class="verso">Que sigas siendo tú,</p>
-<p class="verso">tan única, tan hermosa.</p>
+<p class="verso">Lo que más quiero para ti es que sigas brillando</p>
+<p class="verso">de la manera que lo haces,</p>
+<p class="verso">y que nada apague tu hermoso brillo.</p>
 
 <br>
 
-<p class="verso">Y si el destino lo permite,</p>
-<p class="verso">caminar a tu lado,</p>
-<p class="verso">crecer contigo,</p>
-<p class="verso">soñar sin miedo…</p>
-<p class="verso">porque a tu lado entendí</p>
-<p class="verso">lo que muchos buscan toda la vida:</p>
-<p class="verso">ser feliz de verdad. 🦭</p>
+<p class="verso">Mi mayor anhelo es que estemos siempre juntos,</p>
+<p class="verso">vivamos juntos, crezcamos juntos</p>
+<p class="verso">y soñemos juntos en el camino de la vida.</p>
+<p class="verso">logre con tu compañía algo que para muchos es difícil o imposible,</p>
+<p class="verso">Contigo soy feliz, realmente feliz, mi vida 🦭</p>
 
 </div>
 
-<br>
+<br><br>
 
 <a href="https://www.youtube.com/watch?v=sI8cDAdJS5I">
-  <button class="boton">TE ASMO 🦭</button>
+  <button class="boton">Te amo 🦭</button>
 </a>
 
 </body>
